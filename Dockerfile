@@ -8,7 +8,7 @@ RUN apt-get update
 RUN apt install -y python3.8 python3-pip python3-setuptools python3-dev
     # OpenCV deps
 RUN apt-get update -y
-RUN apt-get install libglib2.0-dev
+RUN apt-get install -y libglib2.0-dev
 #RUN apt install -y libsm6
 #RUN apt install libxext6
 #RUN apt install libxrender1
