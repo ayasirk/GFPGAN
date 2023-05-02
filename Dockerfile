@@ -5,10 +5,7 @@ WORKDIR /app
 RUN apt-get update
 #RUN apt-get install -y --no-install-recommends --fix-missing \
     # python
-RUN apt install -y python3.8
-RUN apt-get install python3-pip
-RUN apt-get install python3-setuptools 
-RUN apt-get install python3-dev 
+RUN apt install -y python3.8 python3-pip python3-setuptools python3-dev
     # OpenCV deps
 RUN apt-get install libglib2.0-0 
 RUN apt-get install libsm6
