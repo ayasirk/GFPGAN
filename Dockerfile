@@ -35,7 +35,7 @@ RUN apt-get install libglib2.0-dev
         #-P experiments/pretrained_models
 
 #RUN rm -rf /var/cache/apt/* /var/lib/apt/lists/* && \
-    apt-get autoremove -y && apt-get clean
+    #apt-get autoremove -y && apt-get clean
 
 #COPY requirements.txt .
 #RUN pip3 install --no-cache-dir -r requirements.txt
