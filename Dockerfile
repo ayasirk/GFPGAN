@@ -2,7 +2,8 @@ FROM nvidia/cuda:10.0-cudnn7-devel
 
 WORKDIR /app
 
-RUN apt-get update && apt-get install -y --no-install-recommends --fix-missing \
+RUN apt-get update
+RUN apt-get install -y --no-install-recommends --fix-missing \
     # python
     python3.8 python3-pip python3-setuptools python3-dev \
     # OpenCV deps
