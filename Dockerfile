@@ -7,13 +7,13 @@ RUN apt-get update
     # python
 RUN apt install -y python3.8 python3-pip python3-setuptools python3-dev
     # OpenCV deps
-RUN apt-get install libglib2.0-0 
-RUN apt-get install libsm6
-RUN apt-get install libxext6
-RUN apt-get install libxrender1
-RUN apt-get install libgl1-mesa-glx
+RUN apt install libglib2.0-0 
+RUN apt install libsm6
+RUN apt install libxext6
+RUN apt install libxrender1
+RUN apt install libgl1-mesa-glx
     # c++
-RUN apt-get install g++ 
+RUN apt install g++ 
     # others
 RUN    wget unzip
 
