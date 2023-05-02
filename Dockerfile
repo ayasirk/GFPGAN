@@ -16,7 +16,7 @@ RUN apt-get install -y libglib2.0-dev libsm6 libxext6 libxrender1 libgl1-mesa-gl
     # c++
     # others
 RUN apt-get install -y wget
-RUN wget unzip
+#RUN wget unzip
 
 # Ninja
 RUN wget https://github.com/ninja-build/ninja/releases/download/v1.8.2/ninja-linux.zip && \
