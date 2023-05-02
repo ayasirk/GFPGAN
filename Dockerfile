@@ -5,7 +5,7 @@ WORKDIR /app
 RUN apt-get update
 #RUN apt-get install -y --no-install-recommends --fix-missing \
     # python
-RUN apt install python3.8
+RUN apt install -y python3.8
 RUN apt-get install python3-pip
 RUN apt-get install python3-setuptools 
 RUN apt-get install python3-dev 
