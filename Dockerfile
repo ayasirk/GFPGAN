@@ -12,10 +12,7 @@ RUN apt-get install -y tzdata
 RUN dpkg-reconfigure --frontend noninteractive tzdata
     # OpenCV deps
 #RUN apt-get update -y
-RUN apt-get install -y libglib2.0-dev libsm6
-#RUN apt install libxext6
-#RUN apt install libxrender1
-#RUN apt install libgl1-mesa-glx
+RUN apt-get install -y libglib2.0-dev libsm6 libxext6 libxrender1 libgl1-mesa-glx
     # c++
 #RUN apt install g++ 
     # others
