@@ -5,14 +5,14 @@ WORKDIR /app
 RUN apt-get update
 #RUN apt-get install -y --no-install-recommends --fix-missing \
     # python
-RUN apt install -y python3.8 python3-pip python3-setuptools python3-dev
-RUN ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime \
-    export DEBIAN_FRONTEND=noninteractive \
-    apt-get install -y tzdata \
-    dpkg-reconfigure --frontend noninteractive tzdata
+#RUN apt install -y python3.8 python3-pip python3-setuptools python3-dev
+RUN ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime
+RUN export DEBIAN_FRONTEND=noninteractive 
+RUN apt-get install -y tzdata 
+RUN dpkg-reconfigure --frontend noninteractive tzdata
     # OpenCV deps
-RUN apt-get update -y
-RUN apt-get install -y libglib2.0-dev
+#RUN apt-get update -y
+#RUN apt-get install -y libglib2.0-dev
 #RUN apt install -y libsm6
 #RUN apt install libxext6
 #RUN apt install libxrender1
