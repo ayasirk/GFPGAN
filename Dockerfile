@@ -15,6 +15,7 @@ RUN dpkg-reconfigure --frontend noninteractive tzdata
 RUN apt-get install -y libglib2.0-dev libsm6 libxext6 libxrender1 libgl1-mesa-glx g++
     # c++
     # others
+RUN apt-get install -y wget
 RUN wget unzip
 
 # Ninja
