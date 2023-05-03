@@ -25,8 +25,11 @@ RUN update-alternatives --install /usr/bin/ninja ninja /usr/local/bin/ninja 1 --
 
 # basicsr facexlib
 RUN python3 -m pip install --upgrade pip 
-RUN pip3 install --no-cache-dir torch>=1.7 opencv-python>=4.5
-RUN pip3 install --no-cache-dir basicsr facexlib realesrgan
+RUN pip3 install --no-cache-dir torch>=1.7 
+RUN pip3 install --no-cache-dir opencv-python>=4.5
+RUN pip3 install --no-cache-dir basicsr 
+RUN pip3 install --no-cache-dir facexlib 
+RUN pip3 install --no-cache-dir realesrgan
 
 # weights
 RUN wget https://github.com/TencentARC/GFPGAN/releases/download/v0.2.0/GFPGANCleanv1-NoCE-C2.pth \
