@@ -3,9 +3,9 @@ FROM nvidia/cuda:12.1.1-cudnn8-devel-ubuntu20.04
 WORKDIR /app
 
 RUN apt-get update
-#RUN apt-get install -y --no-install-recommends --fix-missing \
+RUN apt-get install -y --no-install-recommends --fix-missing
     # python
-#RUN apt install -y python3.8 python3-pip python3-setuptools python3-dev
+RUN apt install -y python3.8 python3-pip python3-setuptools python3-dev
 RUN ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime
 RUN export DEBIAN_FRONTEND=noninteractive 
 RUN apt-get install -y tzdata 
@@ -16,7 +16,7 @@ RUN apt-get install -y libglib2.0-dev libsm6 libxext6 libxrender1 libgl1-mesa-gl
     # c++
     # others
 RUN apt-get install -y wget
-#RUN apt-get install unzip
+RUN apt-get install unzip
 
 # Ninja
 RUN wget https://github.com/ninja-build/ninja/releases/download/v1.8.2/ninja-linux.zip
@@ -37,10 +37,9 @@ RUN wget https://github.com/TencentARC/GFPGAN/releases/download/v0.2.0/GFPGANCle
 RUN rm -rf /var/cache/apt/* /var/lib/apt/lists/* && \
     apt-get autoremove -y && apt-get clean
 
-COPY requirements.txt .
+COPY . .
 RUN pip3 install --no-cache-dir -r requirements.txt
 
-COPY . .
 RUN pip3 install .
 
 
