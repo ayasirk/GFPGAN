@@ -30,6 +30,14 @@ RUN pip3 install --no-cache-dir opencv-python>=4.5
 RUN pip3 install --no-cache-dir basicsr 
 RUN pip3 install --no-cache-dir facexlib 
 RUN pip3 install --no-cache-dir realesrgan
+RUN pip3 install --no-cache-dir lmdb
+RUN pip3 install --no-cache-dir numpy
+RUN pip3 install --no-cache-dir pyyaml
+RUN pip3 install --no-cache-dir scipy
+RUN pip3 install --no-cache-dir tb-nightly
+RUN pip3 install --no-cache-dir torchvision
+RUN pip3 install --no-cache-dir tqdm
+RUN pip3 install --no-cache-dir yapf
 
 # weights
 RUN wget https://github.com/TencentARC/GFPGAN/releases/download/v0.2.0/GFPGANCleanv1-NoCE-C2.pth \
@@ -40,10 +48,11 @@ RUN wget https://github.com/TencentARC/GFPGAN/releases/download/v0.2.0/GFPGANCle
 RUN rm -rf /var/cache/apt/* /var/lib/apt/lists/* && \
     apt-get autoremove -y && apt-get clean
 
+#COPY requirements.txt .
+#RUN pip3 install --no-cache-dir -r requirements.txt
+
 COPY . .
-RUN pip3 install --no-cache-dir -r requirements.txt
-
-RUN pip3 install .
+#RUN pip3 install .
 
 
-CMD ["python3", "inference_gfpgan.py", "--upscale", "2", "--test_path", "inputs/whole_imgs", "--save_root", "results"]
+#CMD ["python3", "inference_gfpgan.py", "-i", "inputs/whole_imgs", "-o", "results", "-v", "1.3", "-s", "2"]
